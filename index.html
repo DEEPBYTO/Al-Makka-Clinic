@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,49 +16,27 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
-    /* ---------- THEME VARIABLES (light default) ---------- */
+    /* ---------- DARK THEME ONLY ---------- */
     :root {
-      --primary: #0b6b61;
-      --primary-dark: #075047;
-      --secondary: #e8f6f3;
-      --text: #172321;
-      --muted: #667573;
-      --white: #ffffff;
-      --light: #f7faf9;
-      --border: #e2ebe9;
-      --shadow: 0 12px 35px rgba(18, 54, 49, 0.08);
+      --primary: #3bb8a3;
+      --primary-dark: #2a9986;
+      --secondary: #16332e;
+      --text: #f0f7f5;
+      --muted: #9fb8b3;
+      --white: #0a1512;
+      --light: #102420;
+      --border: #1f3d37;
+      --shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
       --radius: 18px;
-      --bg: #ffffff;
-      --card-bg: #ffffff;
-      --header-bg: rgba(255,255,255,0.96);
-      --nav-text: #42514f;
-      --hero-bg: #0b6b61;
-      --hero-text: #ffffff;
-      --hero-muted: rgba(255,255,255,0.75);
-      --hero-border: rgba(255,255,255,0.15);
-      --hero-card-bg: rgba(255,255,255,0.08);
-    }
-
-    /* ---------- DARK THEME OVERRIDES ---------- */
-    [data-theme="dark"] {
-      --primary: #2f9e8c;
-      --primary-dark: #218372;
-      --secondary: #1e3a35;
-      --text: #eef4f2;
-      --muted: #b0c4c0;
-      --white: #0f1a18;
-      --light: #182b27;
-      --border: #2a3f3a;
-      --shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
-      --bg: #0f1a18;
-      --card-bg: #182b27;
-      --header-bg: rgba(15, 26, 24, 0.96);
-      --nav-text: #c5d9d4;
+      --bg: #0a1512;
+      --card-bg: #102420;
+      --header-bg: rgba(10, 21, 18, 0.96);
+      --nav-text: #c8ddd8;
       --hero-bg: #0d2e2a;
-      --hero-text: #eef4f2;
-      --hero-muted: rgba(238,244,242,0.7);
-      --hero-border: rgba(238,244,242,0.1);
-      --hero-card-bg: rgba(255,255,255,0.04);
+      --hero-text: #f0f7f5;
+      --hero-muted: rgba(240, 247, 245, 0.8);
+      --hero-border: rgba(240, 247, 245, 0.12);
+      --hero-card-bg: rgba(255, 255, 255, 0.05);
     }
 
     * {
@@ -76,7 +54,6 @@
       color: var(--text);
       background: var(--bg);
       line-height: 1.6;
-      transition: background 0.2s ease, color 0.2s ease;
     }
 
     a {
@@ -102,7 +79,6 @@
       background: var(--header-bg);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
-      transition: background 0.2s ease, border-color 0.2s ease;
     }
 
     .navbar {
@@ -132,6 +108,7 @@
       font-size: 17px;
       font-weight: 800;
       letter-spacing: -0.3px;
+      color: var(--text);
     }
 
     .brand-text span {
@@ -160,35 +137,13 @@
 
     .nav-button {
       padding: 11px 18px;
-      color: var(--white) !important;
+      color: #0a1512 !important;
       background: var(--primary);
       border-radius: 10px;
     }
 
     .nav-button:hover {
       background: var(--primary-dark);
-    }
-
-    /* theme toggle */
-    .theme-toggle {
-      background: transparent;
-      border: 1px solid var(--border);
-      color: var(--text);
-      border-radius: 40px;
-      padding: 8px 14px;
-      font-size: 14px;
-      font-weight: 600;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      transition: 0.2s ease;
-      background: var(--card-bg);
-    }
-
-    .theme-toggle:hover {
-      border-color: var(--primary);
-      color: var(--primary);
     }
 
     /* ---------- HERO ---------- */
@@ -198,7 +153,6 @@
       padding: 100px 0 90px;
       position: relative;
       overflow: hidden;
-      transition: background 0.2s ease;
     }
 
     .hero::before {
@@ -208,7 +162,7 @@
       right: -10%;
       width: 600px;
       height: 600px;
-      background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(59, 184, 163, 0.08) 0%, transparent 70%);
       border-radius: 50%;
       pointer-events: none;
     }
@@ -220,7 +174,7 @@
       left: -5%;
       width: 500px;
       height: 500px;
-      background: radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(59, 184, 163, 0.05) 0%, transparent 70%);
       border-radius: 50%;
       pointer-events: none;
     }
@@ -235,9 +189,9 @@
 
     .eyebrow {
       display: inline-block;
-      color: var(--hero-text);
-      background: var(--hero-card-bg);
-      border: 1px solid var(--hero-border);
+      color: var(--primary);
+      background: rgba(59, 184, 163, 0.1);
+      border: 1px solid rgba(59, 184, 163, 0.25);
       padding: 8px 16px;
       border-radius: 30px;
       font-size: 12px;
@@ -245,7 +199,6 @@
       letter-spacing: 0.5px;
       text-transform: uppercase;
       margin-bottom: 24px;
-      backdrop-filter: blur(4px);
     }
 
     .hero h1 {
@@ -253,7 +206,7 @@
       line-height: 1.06;
       letter-spacing: -2.5px;
       margin-bottom: 22px;
-      color: var(--hero-text);
+      color: #ffffff;
     }
 
     .hero h1 span {
@@ -294,14 +247,14 @@
     }
 
     .button-primary {
-      color: var(--hero-bg);
-      background: var(--hero-text);
+      color: #0a1512;
+      background: var(--primary);
     }
 
     .button-primary:hover {
-      background: #e6f2f0;
+      background: #4fcfb9;
       transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+      box-shadow: 0 8px 24px rgba(59, 184, 163, 0.3);
     }
 
     .button-outline {
@@ -311,11 +264,13 @@
     }
 
     .button-outline:hover {
-      border-color: var(--hero-text);
-      background: var(--hero-card-bg);
+      border-color: var(--primary);
+      color: var(--primary);
+      background: rgba(59, 184, 163, 0.05);
       transform: translateY(-2px);
     }
 
+    /* hero stats row */
     .hero-stats {
       display: flex;
       justify-content: center;
@@ -336,7 +291,7 @@
       font-weight: 800;
       letter-spacing: -1px;
       margin-bottom: 4px;
-      color: var(--hero-text);
+      color: var(--primary);
     }
 
     .hero-stat span {
@@ -376,7 +331,7 @@
       line-height: 1.15;
       letter-spacing: -1.2px;
       margin: 10px 0 15px;
-      color: var(--text);
+      color: #ffffff;
     }
 
     .section-heading p {
@@ -434,7 +389,7 @@
     .about-panel h3 {
       font-size: 23px;
       margin-bottom: 20px;
-      color: var(--text);
+      color: #ffffff;
     }
 
     .about-panel p {
@@ -444,8 +399,7 @@
 
     /* ---------- SERVICES ---------- */
     .services {
-      background: var(--light);
-      transition: background 0.2s ease;
+      background: #0d1f1b;
     }
 
     .service-grid {
@@ -478,7 +432,7 @@
     .service-card h3 {
       font-size: 17px;
       margin-bottom: 10px;
-      color: var(--text);
+      color: #ffffff;
     }
 
     .service-card p {
@@ -508,7 +462,7 @@
       font-size: clamp(30px, 4vw, 42px);
       line-height: 1.15;
       margin: 8px 0 12px;
-      color: var(--text);
+      color: #ffffff;
     }
 
     .doctor-title {
@@ -547,13 +501,12 @@
 
     .credential strong {
       font-size: 13px;
-      color: var(--text);
+      color: #ffffff;
     }
 
     /* ---------- DETAILS / TIMINGS ---------- */
     .details {
-      background: var(--light);
-      transition: background 0.2s ease;
+      background: #0d1f1b;
     }
 
     .details-grid {
@@ -572,7 +525,7 @@
     .detail-card h3 {
       font-size: 17px;
       margin-bottom: 15px;
-      color: var(--text);
+      color: #ffffff;
     }
 
     .detail-card p {
@@ -588,8 +541,8 @@
 
     /* ---------- CONTACT ---------- */
     .contact-box {
-      background: var(--primary);
-      color: var(--white);
+      background: linear-gradient(135deg, #0b6b61 0%, #0d8a7a 100%);
+      color: #ffffff;
       border-radius: 25px;
       padding: 55px;
       display: grid;
@@ -602,10 +555,11 @@
       font-size: clamp(30px, 4vw, 44px);
       line-height: 1.1;
       margin-bottom: 12px;
+      color: #ffffff;
     }
 
     .contact-box p {
-      color: rgba(255,255,255,0.78);
+      color: rgba(255, 255, 255, 0.85);
       max-width: 600px;
       font-size: 14px;
     }
@@ -618,20 +572,20 @@
     }
 
     .contact-actions .button {
-      background: var(--white);
-      color: var(--primary);
+      background: #ffffff;
+      color: #0b6b61;
     }
 
     .contact-actions .button:hover {
-      background: #f2f7f6;
+      background: #e6f2f0;
+      transform: translateY(-2px);
     }
 
-    /* ---------- FOOTER ---------- */
+    /* ---------- FOOTER (updated size) ---------- */
     footer {
       padding: 30px 0;
       border-top: 1px solid var(--border);
       background: var(--bg);
-      transition: background 0.2s ease;
     }
 
     .footer-content {
@@ -640,37 +594,34 @@
       align-items: center;
       gap: 20px;
       color: var(--muted);
-      font-size: 12px;
+      font-size: 14px;
     }
 
     .footer-content strong {
       color: var(--text);
     }
 
-    /* DEEPBYTO wordmark in footer */
-    .footer-brand {
-      display: flex;
+    .wordmark-link {
+      display: inline-flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
+      transition: opacity 0.2s ease;
     }
 
-    .footer-brand span {
-      font-size: 12px;
-      color: var(--muted);
+    .wordmark-link:hover {
+      opacity: 0.75;
     }
 
-    .wordmark {
-      height: 20px;
+    .wordmark-img {
+      height: 22px;
       width: auto;
-      object-fit: contain;
       display: block;
-      /* In dark theme, invert the black wordmark to white */
-      filter: none;
-      transition: filter 0.2s ease;
     }
 
-    [data-theme="dark"] .wordmark {
-      filter: invert(1) brightness(1.1);
+    .developed-by {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--muted);
     }
 
     /* ---------- MOBILE ---------- */
@@ -681,10 +632,6 @@
 
       .navbar {
         justify-content: space-between;
-      }
-
-      .theme-toggle {
-        margin-left: auto;
       }
 
       .hero {
@@ -767,6 +714,10 @@
         flex-wrap: wrap;
         gap: 10px;
       }
+
+      .developed-by {
+        font-size: 13px;
+      }
     }
   </style>
 </head>
@@ -791,10 +742,6 @@
         <a href="#timings">Timings</a>
         <a href="#contact" class="nav-button">Contact</a>
       </nav>
-
-      <button class="theme-toggle" id="themeToggle" aria-label="Switch theme">
-        <span id="themeLabel">Dark</span>
-      </button>
 
     </div>
   </header>
@@ -993,7 +940,7 @@
             src="assets/doctor.jpg"
             alt="Dr. Ahmad Abdullah"
             class="doctor-photo"
-            onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22380%22 height=%22380%22 viewBox=%220 0 380 380%22%3E%3Crect width=%22380%22 height=%22380%22 fill=%22%23e8f6f3%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-family=%22Inter%22 font-size=%2224%22 fill=%22%230b6b61%22 text-anchor=%22middle%22 dy=%22.3em%22%3EDr. Ahmad Abdullah%3C/text%3E%3C/svg%3E'"
+            onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22380%22 height=%22380%22 viewBox=%220 0 380 380%22%3E%3Crect width=%22380%22 height=%22380%22 fill=%22%2316332e%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-family=%22Inter%22 font-size=%2224%22 fill=%22%233bb8a3%22 text-anchor=%22middle%22 dy=%22.3em%22%3EDr. Ahmad Abdullah%3C/text%3E%3C/svg%3E'"
           >
         </div>
 
@@ -1148,13 +1095,21 @@
         &copy; <span id="year"></span> Al-Makkah Clinic. All rights reserved.
       </div>
 
-      <div class="footer-brand">
-        <span>Developed by</span>
-        <img
-          src="https://deepbyto.github.io/wordmark.png"
-          alt="DEEPBYTO"
-          class="wordmark"
+      <div class="developed-by">
+        Developed by
+        <a
+          href="https://deepbyto.github.io/"
+          target="_blank"
+          rel="noopener"
+          class="wordmark-link"
+          aria-label="DEEPBYTO website"
         >
+          <img
+            src="https://deepbyto.github.io/wordmark.png"
+            alt="DEEPBYTO"
+            class="wordmark-img"
+          >
+        </a>
       </div>
 
     </div>
@@ -1163,50 +1118,6 @@
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
-
-    (function() {
-      const toggleBtn = document.getElementById('themeToggle');
-      const themeLabel = document.getElementById('themeLabel');
-      const htmlElement = document.documentElement;
-
-      const savedTheme = localStorage.getItem('theme');
-      const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-      let currentTheme = 'light';
-
-      if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
-        currentTheme = 'dark';
-      } else {
-        currentTheme = 'light';
-      }
-
-      applyTheme(currentTheme);
-
-      toggleBtn.addEventListener('click', function() {
-        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-        applyTheme(newTheme);
-        localStorage.setItem('theme', newTheme);
-      });
-
-      function applyTheme(theme) {
-        if (theme === 'dark') {
-          htmlElement.setAttribute('data-theme', 'dark');
-          themeLabel.textContent = 'Light';
-          currentTheme = 'dark';
-        } else {
-          htmlElement.removeAttribute('data-theme');
-          themeLabel.textContent = 'Dark';
-          currentTheme = 'light';
-        }
-      }
-
-      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-        if (!localStorage.getItem('theme')) {
-          const newTheme = e.matches ? 'dark' : 'light';
-          applyTheme(newTheme);
-        }
-      });
-    })();
   </script>
 
 </body>
