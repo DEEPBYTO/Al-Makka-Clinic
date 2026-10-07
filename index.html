@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Al-Makkah Clinic</title>
-
+  <title>Al-Makkah Clinic | Tibba Sultan Pur</title>
   <meta name="description" content="Al-Makkah Clinic in Tibba Sultan Pur. Medical consultation, diagnostic services, X-Ray, ECG, blood pressure and sugar testing, and general healthcare services.">
   <meta name="keywords" content="Al-Makkah Clinic, Tibba Sultan Pur, Dr Ahmad Abdullah, clinic, medical care">
   <meta name="author" content="Al-Makkah Clinic">
 
-  <link rel="icon" type="image/png" href="assets/logo.png">
+  <!-- favicon: using the provided GitHub icon -->
+  <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/DEEPBYTO/Al-Makka-Clinic/main/icon.ico">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
+    /* ---------- THEME VARIABLES (light default) ---------- */
     :root {
       --primary: #0b6b61;
       --primary-dark: #075047;
@@ -28,6 +28,29 @@
       --border: #e2ebe9;
       --shadow: 0 12px 35px rgba(18, 54, 49, 0.08);
       --radius: 18px;
+      --bg: #ffffff;
+      --card-bg: #ffffff;
+      --header-bg: rgba(255,255,255,0.96);
+      --nav-text: #42514f;
+      --hero-gradient: linear-gradient(135deg, #f2faf8 0%, #ffffff 65%);
+    }
+
+    /* ---------- DARK THEME OVERRIDES ---------- */
+    [data-theme="dark"] {
+      --primary: #2f9e8c;
+      --primary-dark: #218372;
+      --secondary: #1e3a35;
+      --text: #eef4f2;
+      --muted: #b0c4c0;
+      --white: #0f1a18;
+      --light: #182b27;
+      --border: #2a3f3a;
+      --shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+      --bg: #0f1a18;
+      --card-bg: #182b27;
+      --header-bg: rgba(15, 26, 24, 0.96);
+      --nav-text: #c5d9d4;
+      --hero-gradient: linear-gradient(135deg, #0f1a18 0%, #172b27 65%);
     }
 
     * {
@@ -43,8 +66,9 @@
     body {
       font-family: "Inter", sans-serif;
       color: var(--text);
-      background: var(--white);
+      background: var(--bg);
       line-height: 1.6;
+      transition: background 0.2s ease, color 0.2s ease;
     }
 
     a {
@@ -62,15 +86,15 @@
       margin: auto;
     }
 
-    /* Header */
-
+    /* ---------- HEADER ---------- */
     header {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(255,255,255,0.96);
+      background: var(--header-bg);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
+      transition: background 0.2s ease, border-color 0.2s ease;
     }
 
     .navbar {
@@ -92,6 +116,7 @@
       height: 46px;
       object-fit: contain;
       border-radius: 10px;
+      background: var(--secondary); /* fallback while loading */
     }
 
     .brand-text strong {
@@ -117,7 +142,7 @@
     nav a {
       font-size: 14px;
       font-weight: 600;
-      color: #42514f;
+      color: var(--nav-text);
       transition: 0.2s ease;
     }
 
@@ -136,12 +161,33 @@
       background: var(--primary-dark);
     }
 
-    /* Hero */
+    /* theme toggle button */
+    .theme-toggle {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text);
+      border-radius: 40px;
+      padding: 8px 14px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: 0.2s ease;
+      background: var(--card-bg);
+    }
 
+    .theme-toggle:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    /* ---------- HERO (removed doctor photo) ---------- */
     .hero {
-      background:
-        linear-gradient(135deg, #f2faf8 0%, #ffffff 65%);
+      background: var(--hero-gradient);
       padding: 92px 0 82px;
+      transition: background 0.2s ease;
     }
 
     .hero-grid {
@@ -212,7 +258,8 @@
 
     .button-outline {
       border: 1px solid var(--border);
-      background: var(--white);
+      background: var(--card-bg);
+      color: var(--text);
     }
 
     .button-outline:hover {
@@ -220,37 +267,26 @@
       color: var(--primary);
     }
 
+    /* hero card (no doctor image) */
     .hero-card {
-      background: var(--white);
+      background: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: 24px;
       padding: 34px;
       box-shadow: var(--shadow);
     }
 
-    .hero-card-top {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 26px;
-    }
-
-    .doctor-mini {
-      width: 64px;
-      height: 64px;
-      border-radius: 16px;
-      object-fit: cover;
-      background: var(--secondary);
-    }
-
     .hero-card h3 {
-      font-size: 18px;
-      margin-bottom: 3px;
+      font-size: 22px;
+      margin-bottom: 6px;
+      color: var(--text);
     }
 
     .hero-card small {
       color: var(--muted);
-      font-size: 12px;
+      font-size: 13px;
+      display: block;
+      margin-bottom: 22px;
     }
 
     .info-row {
@@ -270,8 +306,7 @@
       text-align: right;
     }
 
-    /* Sections */
-
+    /* ---------- SECTIONS ---------- */
     section {
       padding: 90px 0;
     }
@@ -300,6 +335,7 @@
       line-height: 1.15;
       letter-spacing: -1.2px;
       margin: 10px 0 15px;
+      color: var(--text);
     }
 
     .section-heading p {
@@ -307,8 +343,7 @@
       font-size: 15px;
     }
 
-    /* About */
-
+    /* ---------- ABOUT ---------- */
     .about-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -332,6 +367,7 @@
       border-bottom: 1px solid var(--border);
       font-size: 14px;
       font-weight: 600;
+      color: var(--text);
     }
 
     .about-list li::before {
@@ -351,6 +387,7 @@
     .about-panel h3 {
       font-size: 23px;
       margin-bottom: 20px;
+      color: var(--text);
     }
 
     .about-panel p {
@@ -358,10 +395,10 @@
       font-size: 14px;
     }
 
-    /* Services */
-
+    /* ---------- SERVICES ---------- */
     .services {
       background: var(--light);
+      transition: background 0.2s ease;
     }
 
     .service-grid {
@@ -371,7 +408,7 @@
     }
 
     .service-card {
-      background: var(--white);
+      background: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: var(--radius);
       padding: 28px;
@@ -381,7 +418,7 @@
     .service-card:hover {
       transform: translateY(-4px);
       box-shadow: var(--shadow);
-      border-color: #cfe4e0;
+      border-color: var(--primary);
     }
 
     .service-number {
@@ -394,6 +431,7 @@
     .service-card h3 {
       font-size: 17px;
       margin-bottom: 10px;
+      color: var(--text);
     }
 
     .service-card p {
@@ -401,8 +439,7 @@
       font-size: 13px;
     }
 
-    /* Doctor */
-
+    /* ---------- DOCTOR (photo remains here, just not in hero) ---------- */
     .doctor-grid {
       display: grid;
       grid-template-columns: 0.8fr 1.2fr;
@@ -424,6 +461,7 @@
       font-size: clamp(30px, 4vw, 42px);
       line-height: 1.15;
       margin: 8px 0 12px;
+      color: var(--text);
     }
 
     .doctor-title {
@@ -462,12 +500,13 @@
 
     .credential strong {
       font-size: 13px;
+      color: var(--text);
     }
 
-    /* Details */
-
+    /* ---------- DETAILS / TIMINGS ---------- */
     .details {
       background: var(--light);
+      transition: background 0.2s ease;
     }
 
     .details-grid {
@@ -477,7 +516,7 @@
     }
 
     .detail-card {
-      background: var(--white);
+      background: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: var(--radius);
       padding: 28px;
@@ -486,6 +525,7 @@
     .detail-card h3 {
       font-size: 17px;
       margin-bottom: 15px;
+      color: var(--text);
     }
 
     .detail-card p {
@@ -499,8 +539,7 @@
       font-weight: 800;
     }
 
-    /* Contact */
-
+    /* ---------- CONTACT ---------- */
     .contact-box {
       background: var(--primary);
       color: var(--white);
@@ -540,12 +579,12 @@
       background: #f2f7f6;
     }
 
-    /* Footer */
-
+    /* ---------- FOOTER ---------- */
     footer {
       padding: 30px 0;
       border-top: 1px solid var(--border);
-      background: var(--white);
+      background: var(--bg);
+      transition: background 0.2s ease;
     }
 
     .footer-content {
@@ -561,11 +600,18 @@
       color: var(--text);
     }
 
-    /* Mobile */
-
+    /* ---------- MOBILE ---------- */
     @media (max-width: 850px) {
       nav {
         display: none;
+      }
+
+      .navbar {
+        justify-content: space-between;
+      }
+
+      .theme-toggle {
+        margin-left: auto;
       }
 
       .hero {
@@ -631,6 +677,11 @@
         flex-direction: column;
         text-align: center;
       }
+
+      .navbar {
+        flex-wrap: wrap;
+        gap: 10px;
+      }
     }
   </style>
 </head>
@@ -641,7 +692,7 @@
     <div class="container navbar">
 
       <a href="#" class="brand">
-        <img src="assets/logo.png" alt="Al-Makkah Clinic Logo" class="brand-logo">
+        <img src="https://raw.githubusercontent.com/DEEPBYTO/Al-Makka-Clinic/main/icon.ico" alt="Al-Makkah Clinic Logo" class="brand-logo">
         <div class="brand-text">
           <strong>Al-Makkah Clinic</strong>
           <span>Tibba Sultan Pur</span>
@@ -656,13 +707,18 @@
         <a href="#contact" class="nav-button">Contact</a>
       </nav>
 
+      <!-- theme toggle button (light/dark) -->
+      <button class="theme-toggle" id="themeToggle" aria-label="Switch theme">
+        <span id="themeIcon">🌙</span>
+        <span id="themeLabel">Dark</span>
+      </button>
+
     </div>
   </header>
 
   <main>
 
-    <!-- Hero -->
-
+    <!-- Hero (doctor image removed from here) -->
     <section class="hero">
       <div class="container hero-grid">
 
@@ -690,20 +746,10 @@
           </div>
         </div>
 
+        <!-- hero card without doctor image -->
         <div class="hero-card">
-
-          <div class="hero-card-top">
-            <img
-              src="assets/doctor.jpg"
-              alt="Dr. Ahmad Abdullah"
-              class="doctor-mini"
-            >
-
-            <div>
-              <h3>Dr. Ahmad Abdullah</h3>
-              <small>MBBS, MD, RMP</small>
-            </div>
-          </div>
+          <h3>Al‑Makkah Clinic</h3>
+          <small>Consultation & Diagnostics</small>
 
           <div class="info-row">
             <span>Location</span>
@@ -724,14 +770,12 @@
             <span>Weekly Off</span>
             <strong>Sunday</strong>
           </div>
-
         </div>
 
       </div>
     </section>
 
     <!-- About -->
-
     <section id="about">
       <div class="container about-grid">
 
@@ -776,7 +820,6 @@
     </section>
 
     <!-- Services -->
-
     <section class="services" id="services">
 
       <div class="container">
@@ -794,98 +837,73 @@
           <div class="service-card">
             <div class="service-number">01</div>
             <h3>General Medical Care</h3>
-            <p>
-              Medical consultation and care for common health conditions.
-            </p>
+            <p>Medical consultation and care for common health conditions.</p>
           </div>
 
           <div class="service-card">
             <div class="service-number">02</div>
             <h3>X-Ray</h3>
-            <p>
-              X-Ray facility for necessary diagnostic evaluation.
-            </p>
+            <p>X-Ray facility for necessary diagnostic evaluation.</p>
           </div>
 
           <div class="service-card">
             <div class="service-number">03</div>
             <h3>ECG & Diagnostic Tests</h3>
-            <p>
-              ECG and necessary diagnostic testing services.
-            </p>
+            <p>ECG and necessary diagnostic testing services.</p>
           </div>
 
           <div class="service-card">
             <div class="service-number">04</div>
             <h3>Blood Pressure & Sugar</h3>
-            <p>
-              Blood pressure and blood sugar testing facilities.
-            </p>
+            <p>Blood pressure and blood sugar testing facilities.</p>
           </div>
 
           <div class="service-card">
             <div class="service-number">05</div>
             <h3>Chest & T.B. Care</h3>
-            <p>
-              Medical care and support for chest diseases including T.B.
-            </p>
+            <p>Medical care and support for chest diseases including T.B.</p>
           </div>
 
           <div class="service-card">
             <div class="service-number">06</div>
             <h3>Liver, Kidney & Stomach</h3>
-            <p>
-              Consultation and care related to stomach, liver and kidney
-              conditions.
-            </p>
+            <p>Consultation and care related to stomach, liver and kidney conditions.</p>
           </div>
 
           <div class="service-card">
             <div class="service-number">07</div>
             <h3>Women's Health</h3>
-            <p>
-              Medical consultation for gynecological health concerns.
-            </p>
+            <p>Medical consultation for gynecological health concerns.</p>
           </div>
 
           <div class="service-card">
             <div class="service-number">08</div>
             <h3>Children's Health</h3>
-            <p>
-              Medical consultation and care for children's diseases.
-            </p>
+            <p>Medical consultation and care for children's diseases.</p>
           </div>
 
           <div class="service-card">
             <div class="service-number">09</div>
             <h3>Joint & Knee Pain</h3>
-            <p>
-              Consultation for joint pain and knee pain in men and women.
-            </p>
+            <p>Consultation for joint pain and knee pain in men and women.</p>
           </div>
 
           <div class="service-card">
             <div class="service-number">10</div>
             <h3>Obesity</h3>
-            <p>
-              Medical consultation and healthcare support related to obesity.
-            </p>
+            <p>Medical consultation and healthcare support related to obesity.</p>
           </div>
 
           <div class="service-card">
             <div class="service-number">11</div>
             <h3>Sexual Health</h3>
-            <p>
-              Medical consultation for sexual health-related concerns.
-            </p>
+            <p>Medical consultation for sexual health-related concerns.</p>
           </div>
 
           <div class="service-card">
             <div class="service-number">12</div>
             <h3>Cancer Patient Care</h3>
-            <p>
-              Medical care and support for cancer patients.
-            </p>
+            <p>Medical care and support for cancer patients.</p>
           </div>
 
         </div>
@@ -893,8 +911,7 @@
       </div>
     </section>
 
-    <!-- Doctor -->
-
+    <!-- Doctor section (photo retained) -->
     <section id="doctor">
 
       <div class="container doctor-grid">
@@ -904,6 +921,7 @@
             src="assets/doctor.jpg"
             alt="Dr. Ahmad Abdullah"
             class="doctor-photo"
+            onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22380%22 height=%22380%22 viewBox=%220 0 380 380%22%3E%3Crect width=%22380%22 height=%22380%22 fill=%22%23e8f6f3%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-family=%22Inter%22 font-size=%2224%22 fill=%22%230b6b61%22 text-anchor=%22middle%22 dy=%22.3em%22%3EDr. Ahmad Abdullah%3C/text%3E%3C/svg%3E'"
           >
         </div>
 
@@ -959,8 +977,7 @@
 
     </section>
 
-    <!-- Timings -->
-
+    <!-- Timings / Details -->
     <section class="details" id="timings">
 
       <div class="container">
@@ -1011,7 +1028,6 @@
     </section>
 
     <!-- Contact -->
-
     <section id="contact">
 
       <div class="container">
@@ -1029,10 +1045,7 @@
 
           <div class="contact-actions">
 
-            <a
-              href="tel:+923016455267"
-              class="button"
-            >
+            <a href="tel:+923016455267" class="button">
               +92 301 6455267
             </a>
 
@@ -1071,8 +1084,62 @@
 
   </footer>
 
+  <!-- scripts: year + theme toggle -->
   <script>
+    // set current year
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    (function() {
+      // theme toggle functionality
+      const toggleBtn = document.getElementById('themeToggle');
+      const themeIcon = document.getElementById('themeIcon');
+      const themeLabel = document.getElementById('themeLabel');
+      const htmlElement = document.documentElement;
+
+      // check for saved theme preference, otherwise use system preference
+      const savedTheme = localStorage.getItem('theme');
+      const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+      let currentTheme = 'light';
+
+      if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+        currentTheme = 'dark';
+      } else {
+        currentTheme = 'light';
+      }
+
+      // apply initial theme
+      applyTheme(currentTheme);
+
+      // toggle click handler
+      toggleBtn.addEventListener('click', function() {
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        applyTheme(newTheme);
+        localStorage.setItem('theme', newTheme);
+      });
+
+      function applyTheme(theme) {
+        if (theme === 'dark') {
+          htmlElement.setAttribute('data-theme', 'dark');
+          themeIcon.textContent = '☀️';
+          themeLabel.textContent = 'Light';
+          currentTheme = 'dark';
+        } else {
+          htmlElement.removeAttribute('data-theme');
+          themeIcon.textContent = '🌙';
+          themeLabel.textContent = 'Dark';
+          currentTheme = 'light';
+        }
+      }
+
+      // optional: listen for system changes if no saved theme
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        if (!localStorage.getItem('theme')) {
+          const newTheme = e.matches ? 'dark' : 'light';
+          applyTheme(newTheme);
+        }
+      });
+    })();
   </script>
 
 </body>
