@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Al-Makkah Clinic | Tibba Sultan Pur</title>
+
+<meta name="description" content="Al-Makkah Clinic in Tibba Sultan Pur. Medical consultation by Dr. Ahmad Abdullah, MBBS, MD, RMP.">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f7fbfc;
+    color:#18323a;
+    line-height:1.6;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+header{
+    background:#fff;
+    border-bottom:1px solid #e5eeee;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.nav{
+    max-width:1150px;
+    margin:auto;
+    padding:16px 20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.brand{
+    font-size:23px;
+    font-weight:800;
+    color:#087f8c;
+}
+
+.brand span{
+    display:block;
+    font-size:12px;
+    color:#6c858b;
+    font-weight:500;
+    letter-spacing:1px;
+}
+
+nav{
+    display:flex;
+    gap:25px;
+    align-items:center;
+}
+
+nav a{
+    font-size:14px;
+    font-weight:600;
+    color:#38545b;
+}
+
+nav a:hover{
+    color:#087f8c;
+}
+
+.nav-btn{
+    background:#087f8c;
+    color:#fff!important;
+    padding:10px 17px;
+    border-radius:8px;
+}
+
+.hero{
+    background:linear-gradient(135deg,#e9f8f9,#fff);
+    padding:85px 20px;
+}
+
+.hero-content{
+    max-width:1150px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1.3fr .7fr;
+    gap:50px;
+    align-items:center;
+}
+
+.badge{
+    display:inline-block;
+    background:#d8f2f3;
+    color:#087f8c;
+    padding:7px 13px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:700;
+    margin-bottom:18px;
+}
+
+.hero h1{
+    font-size:54px;
+    line-height:1.1;
+    color:#123a43;
+    margin-bottom:18px;
+}
+
+.hero h1 span{
+    color:#087f8c;
+}
+
+.hero p{
+    max-width:650px;
+    font-size:18px;
+    color:#60767c;
+    margin-bottom:28px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-block;
+    padding:13px 21px;
+    border-radius:9px;
+    font-weight:700;
+    font-size:14px;
+}
+
+.btn-primary{
+    background:#087f8c;
+    color:#fff;
+}
+
+.btn-secondary{
+    background:#fff;
+    color:#087f8c;
+    border:1px solid #b9dfe2;
+}
+
+.hero-card{
+    background:#fff;
+    border:1px solid #dceced;
+    border-radius:18px;
+    padding:30px;
+    box-shadow:0 15px 45px rgba(20,80,90,.08);
+}
+
+.doctor-icon{
+    width:80px;
+    height:80px;
+    border-radius:50%;
+    background:#e3f6f7;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:18px;
+    font-size:32px;
+    color:#087f8c;
+}
+
+.hero-card h3{
+    font-size:21px;
+    margin-bottom:5px;
+}
+
+.qualification{
+    color:#087f8c;
+    font-weight:700;
+    margin-bottom:18px;
+}
+
+.info-row{
+    padding:9px 0;
+    border-top:1px solid #edf3f4;
+    font-size:14px;
+}
+
+.info-row strong{
+    color:#29484f;
+}
+
+section{
+    padding:75px 20px;
+}
+
+.container{
+    max-width:1150px;
+    margin:auto;
+}
+
+.section-heading{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.section-heading h2{
+    font-size:35px;
+    color:#123a43;
+    margin-bottom:10px;
+}
+
+.section-heading p{
+    color:#6b8086;
+    max-width:650px;
+    margin:auto;
+}
+
+.about{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.about h2{
+    font-size:35px;
+    margin-bottom:18px;
+    color:#123a43;
+}
+
+.about p{
+    color:#61767c;
+    margin-bottom:15px;
+}
+
+.about-box{
+    background:#eaf8f9;
+    border-radius:18px;
+    padding:35px;
+}
+
+.about-box h3{
+    color:#087f8c;
+    margin-bottom:20px;
+}
+
+.about-item{
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+    padding:13px 0;
+    border-bottom:1px solid #d3eaec;
+    font-size:14px;
+}
+
+.about-item:last-child{
+    border-bottom:0;
+}
+
+#services{
+    background:#fff;
+}
+
+.services-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.service-card{
+    background:#f8fcfc;
+    border:1px solid #e1eeee;
+    border-radius:14px;
+    padding:25px;
+    transition:.25s;
+}
+
+.service-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 12px 30px rgba(20,80,90,.08);
+}
+
+.service-number{
+    color:#087f8c;
+    font-size:13px;
+    font-weight:800;
+    margin-bottom:12px;
+}
+
+.service-card h3{
+    font-size:18px;
+    margin-bottom:7px;
+}
+
+.service-card p{
+    color:#6b8086;
+    font-size:14px;
+}
+
+.doctor-section{
+    display:grid;
+    grid-template-columns:.8fr 1.2fr;
+    gap:45px;
+    align-items:center;
+}
+
+.doctor-photo{
+    min-height:360px;
+    border-radius:20px;
+    background:#eaf8f9;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#087f8c;
+    font-weight:700;
+    border:1px solid #d8eaec;
+    text-align:center;
+    padding:20px;
+}
+
+.doctor-info h2{
+    font-size:36px;
+    color:#123a43;
+    margin-bottom:7px;
+}
+
+.doctor-info .degree{
+    color:#087f8c;
+    font-weight:700;
+    margin-bottom:22px;
+}
+
+.doctor-info p{
+    color:#637980;
+    margin-bottom:13px;
+}
+
+.registration{
+    margin-top:22px;
+    background:#f3f9fa;
+    border-radius:12px;
+    padding:18px;
+}
+
+.registration p{
+    margin:4px 0;
+    font-size:14px;
+}
+
+#timings{
+    background:#eaf8f9;
+}
+
+.timing-box{
+    max-width:700px;
+    margin:auto;
+    background:#fff;
+    border-radius:18px;
+    padding:30px;
+    border:1px solid #d9eaec;
+}
+
+.timing-row{
+    display:flex;
+    justify-content:space-between;
+    padding:16px 5px;
+    border-bottom:1px solid #edf1f2;
+}
+
+.timing-row:last-child{
+    border-bottom:none;
+}
+
+.timing-row strong{
+    color:#183d45;
+}
+
+.closed{
+    color:#c84a4a;
+    font-weight:700;
+}
+
+.fee{
+    margin-top:25px;
+    padding:20px;
+    background:#087f8c;
+    color:#fff;
+    border-radius:12px;
+    text-align:center;
+}
+
+.fee span{
+    font-size:28px;
+    font-weight:800;
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+}
+
+.contact-card{
+    background:#fff;
+    border:1px solid #dfebed;
+    border-radius:16px;
+    padding:28px;
+}
+
+.contact-card h3{
+    margin-bottom:12px;
+    color:#123a43;
+}
+
+.contact-card p{
+    color:#647a80;
+    margin-bottom:8px;
+}
+
+.contact-link{
+    color:#087f8c;
+    font-weight:700;
+}
+
+.map-box{
+    min-height:220px;
+    background:#edf7f8;
+    border-radius:14px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:#087f8c;
+    font-weight:700;
+    padding:20px;
+}
+
+footer{
+    background:#123a43;
+    color:#fff;
+    padding:35px 20px;
+}
+
+.footer-content{
+    max-width:1150px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    gap:25px;
+    align-items:center;
+}
+
+.footer-brand{
+    font-size:20px;
+    font-weight:800;
+}
+
+.footer-brand p{
+    font-size:12px;
+    color:#b9d1d5;
+    font-weight:normal;
+    margin-top:4px;
+}
+
+.developed{
+    text-align:right;
+    color:#b9d1d5;
+    font-size:13px;
+}
+
+.developed strong{
+    color:#fff;
+}
+
+@media(max-width:850px){
+
+    nav{
+        display:none;
+    }
+
+    .hero-content,
+    .about,
+    .doctor-section,
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero{
+        padding:60px 20px;
+    }
+
+    .hero h1{
+        font-size:42px;
+    }
+
+    .services-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .footer-content{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .developed{
+        text-align:left;
+    }
+}
+
+@media(max-width:550px){
+
+    .services-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero h1{
+        font-size:36px;
+    }
+
+    .section-heading h2,
+    .about h2,
+    .doctor-info h2{
+        font-size:29px;
+    }
+
+    .timing-row{
+        font-size:14px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="nav">
+
+        <a href="#" class="brand">
+            Al-Makkah Clinic
+            <span>Tibba Sultan Pur</span>
+        </a>
+
+        <nav>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#doctor">Doctor</a>
+            <a href="#timings">Timings</a>
+            <a href="#contact">Contact</a>
+            <a href="tel:+923016455267" class="nav-btn">Call Clinic</a>
+        </nav>
+
+    </div>
+</header>
+
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div>
+
+            <div class="badge">
+                MEDICAL CARE • TIBBA SULTAN PUR
+            </div>
+
+            <h1>
+                Al-Makkah <span>Clinic</span>
+            </h1>
+
+            <p>
+                Medical consultation and healthcare services
+                in Tibba Sultan Pur by Dr. Ahmad Abdullah,
+                MBBS, MD, RMP.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="tel:+923016455267" class="btn btn-primary">
+                    Call +92 301 6455267
+                </a>
+
+                <a href="#timings" class="btn btn-secondary">
+                    View Timings
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-card">
+
+            <div class="doctor-icon">+</div>
+
+            <h3>Dr. Ahmad Abdullah</h3>
+
+            <div class="qualification">
+                MBBS, MD, RMP
+            </div>
+
+            <div class="info-row">
+                <strong>Consultation Fee:</strong> PKR 300
+            </div>
+
+            <div class="info-row">
+                <strong>Location:</strong> Tibba Sultan Pur
+            </div>
+
+            <div class="info-row">
+                <strong>Contact:</strong>
+                <a href="tel:+923016455267" class="contact-link">
+                    +92 301 6455267
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="about">
+
+    <div class="container">
+
+        <div class="about">
+
+            <div>
+
+                <h2>About Al-Makkah Clinic</h2>
+
+                <p>
+                    Al-Makkah Clinic is located in Tibba Sultan Pur
+                    and provides medical consultation and healthcare
+                    facilities for patients.
+                </p>
+
+                <p>
+                    Consultation is provided by
+                    Dr. Ahmad Abdullah, MBBS, MD, RMP.
+                </p>
+
+                <p>
+                    The clinic provides medical consultation,
+                    diagnostic facilities and healthcare services.
+                </p>
+
+            </div>
+
+
+            <div class="about-box">
+
+                <h3>Clinic Information</h3>
+
+                <div class="about-item">
+                    <strong>Location</strong>
+                    <span>Tibba Sultan Pur</span>
+                </div>
+
+                <div class="about-item">
+                    <strong>Consultation</strong>
+                    <span>PKR 300</span>
+                </div>
+
+                <div class="about-item">
+                    <strong>Opening</strong>
+                    <span>9:00 AM</span>
+                </div>
+
+                <div class="about-item">
+                    <strong>Break</strong>
+                    <span>1:00 PM – 3:00 PM</span>
+                </div>
+
+                <div class="about-item">
+                    <strong>Sunday</strong>
+                    <span>Closed</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="services">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <h2>Medical Services & Facilities</h2>
+
+            <p>
+                Facilities and medical care available at
+                Al-Makkah Clinic.
+            </p>
+
+        </div>
+
+
+        <div class="services-grid">
+
+            <div class="service-card">
+                <div class="service-number">01</div>
+                <h3>X-Ray</h3>
+                <p>X-Ray facility available at the clinic.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-number">02</div>
+                <h3>Blood Pressure & Sugar</h3>
+                <p>
+                    Blood pressure and sugar testing facilities.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-number">03</div>
+                <h3>ECG & Diagnostic Tests</h3>
+                <p>
+                    ECG and necessary diagnostic tests.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-number">04</div>
+                <h3>Chest Diseases</h3>
+                <p>
+                    Medical care for chest diseases including TB.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-number">05</div>
+                <h3>Stomach, Liver & Kidney</h3>
+                <p>
+                    Consultation and treatment for related diseases.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-number">06</div>
+                <h3>Joint & Knee Pain</h3>
+                <p>
+                    Care for joint and knee pain in men and women.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-number">07</div>
+                <h3>Gynecological Care</h3>
+                <p>
+                    Medical care for women's health concerns.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-number">08</div>
+                <h3>Children's Diseases</h3>
+                <p>
+                    Medical consultation for children's diseases.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-number">09</div>
+                <h3>Obesity Care</h3>
+                <p>
+                    Consultation related to obesity and weight concerns.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-number">10</div>
+                <h3>Cancer Patient Care</h3>
+                <p>
+                    Medical care and consultation for cancer patients.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-number">11</div>
+                <h3>Sexual Health</h3>
+                <p>
+                    Consultation for sexual health concerns.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="doctor">
+
+    <div class="container">
+
+        <div class="doctor-section">
+
+            <div class="doctor-photo">
+                Doctor Photo<br>
+                <small>Add doctor's image here later</small>
+            </div>
+
+
+            <div class="doctor-info">
+
+                <h2>Dr. Ahmad Abdullah</h2>
+
+                <div class="degree">
+                    MBBS, MD, RMP
+                </div>
+
+                <p>
+                    Dr. Ahmad Abdullah served as a former
+                    House Surgeon at Nishtar Hospital, Multan.
+                </p>
+
+                <p>
+                    He also served as a former House Physician
+                    at Nishtar Hospital, Multan.
+                </p>
+
+                <div class="registration">
+
+                    <p>
+                        <strong>PMDC No:</strong>
+                        95 34 1301 M
+                    </p>
+
+                    <p>
+                        <strong>PHC Reg No:</strong>
+                        R-98468
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="timings">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <h2>Clinic Timings</h2>
+
+            <p>
+                Please check the clinic schedule before visiting.
+            </p>
+
+        </div>
+
+
+        <div class="timing-box">
+
+            <div class="timing-row">
+                <strong>Monday – Saturday</strong>
+                <span>9:00 AM – 9:00 PM</span>
+            </div>
+
+            <div class="timing-row">
+                <strong>Break</strong>
+                <span>1:00 PM – 3:00 PM</span>
+            </div>
+
+            <div class="timing-row">
+                <strong>Sunday</strong>
+                <span class="closed">Closed</span>
+            </div>
+
+            <div class="fee">
+                Consultation Fee<br>
+                <span>PKR 300</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="contact">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <h2>Contact Al-Makkah Clinic</h2>
+
+            <p>
+                For consultation information, please contact the clinic.
+            </p>
+
+        </div>
+
+
+        <div class="contact-grid">
+
+            <div class="contact-card">
+
+                <h3>Clinic Contact</h3>
+
+                <p>
+                    <strong>Location:</strong><br>
+                    Tibba Sultan Pur
+                </p>
+
+                <p>
+                    <strong>Phone:</strong><br>
+
+                    <a href="tel:+923016455267" class="contact-link">
+                        +92 301 6455267
+                    </a>
+                </p>
+
+                <br>
+
+                <a href="tel:+923016455267" class="btn btn-primary">
+                    Call Now
+                </a>
+
+            </div>
+
+
+            <div class="contact-card">
+
+                <h3>Clinic Location</h3>
+
+                <div class="map-box">
+                    Google Maps location will be added here.
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <div class="footer-content">
+
+        <div class="footer-brand">
+
+            Al-Makkah Clinic
+
+            <p>
+                Tibba Sultan Pur
+            </p>
+
+        </div>
+
+        <div class="developed">
+            Developed by <strong>DEEPBYTO</strong>
+        </div>
+
+    </div>
+
+</footer>
+
+</body>
+</html>
