@@ -32,7 +32,11 @@
       --card-bg: #ffffff;
       --header-bg: rgba(255,255,255,0.96);
       --nav-text: #42514f;
-      --hero-gradient: linear-gradient(135deg, #f2faf8 0%, #ffffff 65%);
+      --hero-bg: #0b6b61;
+      --hero-text: #ffffff;
+      --hero-muted: rgba(255,255,255,0.75);
+      --hero-border: rgba(255,255,255,0.15);
+      --hero-card-bg: rgba(255,255,255,0.08);
     }
 
     /* ---------- DARK THEME OVERRIDES ---------- */
@@ -50,7 +54,11 @@
       --card-bg: #182b27;
       --header-bg: rgba(15, 26, 24, 0.96);
       --nav-text: #c5d9d4;
-      --hero-gradient: linear-gradient(135deg, #0f1a18 0%, #172b27 65%);
+      --hero-bg: #0d2e2a;
+      --hero-text: #eef4f2;
+      --hero-muted: rgba(238,244,242,0.7);
+      --hero-border: rgba(238,244,242,0.1);
+      --hero-card-bg: rgba(255,255,255,0.04);
     }
 
     * {
@@ -183,29 +191,61 @@
       color: var(--primary);
     }
 
-    /* ---------- HERO (simplified, no card, no doctor image) ---------- */
+    /* ---------- HERO (new style, no emojis, no card) ---------- */
     .hero {
-      background: var(--hero-gradient);
-      padding: 92px 0 82px;
+      background: var(--hero-bg);
+      color: var(--hero-text);
+      padding: 100px 0 90px;
+      position: relative;
+      overflow: hidden;
       transition: background 0.2s ease;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      bottom: -40%;
+      left: -5%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
     }
 
     .hero-content {
       max-width: 820px;
       margin: 0 auto;
       text-align: center;
+      position: relative;
+      z-index: 1;
     }
 
     .eyebrow {
       display: inline-block;
-      color: var(--primary);
-      background: var(--secondary);
-      border: 1px solid #d5ebe7;
-      padding: 7px 12px;
+      color: var(--hero-text);
+      background: var(--hero-card-bg);
+      border: 1px solid var(--hero-border);
+      padding: 8px 16px;
       border-radius: 30px;
       font-size: 12px;
       font-weight: 700;
-      margin-bottom: 20px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      backdrop-filter: blur(4px);
     }
 
     .hero h1 {
@@ -213,57 +253,99 @@
       line-height: 1.06;
       letter-spacing: -2.5px;
       margin-bottom: 22px;
+      color: var(--hero-text);
     }
 
     .hero h1 span {
-      color: var(--primary);
+      display: block;
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 500;
+      letter-spacing: -1px;
+      margin-top: 12px;
+      color: var(--hero-muted);
     }
 
     .hero p {
-      max-width: 620px;
-      margin: 0 auto 30px;
-      color: var(--muted);
+      max-width: 600px;
+      margin: 0 auto 36px;
+      color: var(--hero-muted);
       font-size: 17px;
+      line-height: 1.7;
     }
 
     .hero-buttons {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 12px;
+      gap: 14px;
     }
 
     .button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 48px;
-      padding: 0 21px;
-      border-radius: 11px;
+      min-height: 50px;
+      padding: 0 26px;
+      border-radius: 12px;
       font-size: 14px;
       font-weight: 700;
-      transition: 0.2s ease;
+      transition: 0.25s ease;
+      letter-spacing: 0.2px;
     }
 
     .button-primary {
-      color: var(--white);
-      background: var(--primary);
+      color: var(--hero-bg);
+      background: var(--hero-text);
     }
 
     .button-primary:hover {
-      background: var(--primary-dark);
-      transform: translateY(-1px);
+      background: #e6f2f0;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
     }
 
     .button-outline {
-      border: 1px solid var(--border);
-      background: var(--card-bg);
-      color: var(--text);
+      border: 1.5px solid var(--hero-border);
+      background: transparent;
+      color: var(--hero-text);
     }
 
     .button-outline:hover {
-      border-color: var(--primary);
-      color: var(--primary);
+      border-color: var(--hero-text);
+      background: var(--hero-card-bg);
+      transform: translateY(-2px);
+    }
+
+    /* hero stats row */
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      margin-top: 60px;
+      padding-top: 40px;
+      border-top: 1px solid var(--hero-border);
+      flex-wrap: wrap;
+    }
+
+    .hero-stat {
+      text-align: center;
+    }
+
+    .hero-stat strong {
+      display: block;
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 4px;
+      color: var(--hero-text);
+    }
+
+    .hero-stat span {
+      font-size: 12px;
+      color: var(--hero-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
     }
 
     /* ---------- SECTIONS ---------- */
@@ -328,13 +410,19 @@
       font-size: 14px;
       font-weight: 600;
       color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
     .about-list li::before {
-      content: "✓";
-      color: var(--primary);
-      font-weight: 800;
-      margin-right: 10px;
+      content: "";
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background: var(--primary);
+      border-radius: 50%;
+      flex-shrink: 0;
     }
 
     .about-panel {
@@ -399,7 +487,7 @@
       font-size: 13px;
     }
 
-    /* ---------- DOCTOR (photo remains) ---------- */
+    /* ---------- DOCTOR ---------- */
     .doctor-grid {
       display: grid;
       grid-template-columns: 0.8fr 1.2fr;
@@ -575,10 +663,15 @@
       }
 
       .hero {
-        padding: 65px 0;
+        padding: 70px 0 60px;
       }
 
-      .hero-grid,
+      .hero-stats {
+        gap: 30px;
+        margin-top: 45px;
+        padding-top: 30px;
+      }
+
       .about-grid,
       .doctor-grid {
         grid-template-columns: 1fr;
@@ -615,6 +708,18 @@
 
       .hero h1 {
         letter-spacing: -1.5px;
+      }
+
+      .hero h1 span {
+        font-size: clamp(22px, 5vw, 30px);
+      }
+
+      .hero-stats {
+        gap: 24px;
+      }
+
+      .hero-stat strong {
+        font-size: 22px;
       }
 
       .service-grid,
@@ -663,7 +768,6 @@
       </nav>
 
       <button class="theme-toggle" id="themeToggle" aria-label="Switch theme">
-        <span id="themeIcon">🌙</span>
         <span id="themeLabel">Dark</span>
       </button>
 
@@ -672,7 +776,7 @@
 
   <main>
 
-    <!-- Hero (no card, simple centered text) -->
+    <!-- Hero (new style: dark bg, centered, stats row) -->
     <section class="hero">
       <div class="container">
         <div class="hero-content">
@@ -680,8 +784,8 @@
           <span class="eyebrow">Professional Medical Care</span>
 
           <h1>
-            Trusted Healthcare at
-            <span>Al-Makkah Clinic</span>
+            Al-Makkah Clinic
+            <span>Trusted Healthcare in Tibba Sultan Pur</span>
           </h1>
 
           <p>
@@ -697,6 +801,21 @@
             <a href="#services" class="button button-outline">
               View Services
             </a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <strong>12+</strong>
+              <span>Services</span>
+            </div>
+            <div class="hero-stat">
+              <strong>9AM – 9PM</strong>
+              <span>Open Hours</span>
+            </div>
+            <div class="hero-stat">
+              <strong>PKR 300</strong>
+              <span>Consultation</span>
+            </div>
           </div>
 
         </div>
@@ -839,7 +958,7 @@
       </div>
     </section>
 
-    <!-- Doctor section (photo retained) -->
+    <!-- Doctor -->
     <section id="doctor">
 
       <div class="container doctor-grid">
@@ -905,7 +1024,7 @@
 
     </section>
 
-    <!-- Timings / Details -->
+    <!-- Timings -->
     <section class="details" id="timings">
 
       <div class="container">
@@ -1001,7 +1120,7 @@
     <div class="container footer-content">
 
       <div>
-        © <span id="year"></span> Al-Makkah Clinic. All rights reserved.
+        &copy; <span id="year"></span> Al-Makkah Clinic. All rights reserved.
       </div>
 
       <div>
@@ -1012,14 +1131,11 @@
 
   </footer>
 
-  <!-- scripts -->
   <script>
-    // set current year
     document.getElementById("year").textContent = new Date().getFullYear();
 
     (function() {
       const toggleBtn = document.getElementById('themeToggle');
-      const themeIcon = document.getElementById('themeIcon');
       const themeLabel = document.getElementById('themeLabel');
       const htmlElement = document.documentElement;
 
@@ -1045,12 +1161,10 @@
       function applyTheme(theme) {
         if (theme === 'dark') {
           htmlElement.setAttribute('data-theme', 'dark');
-          themeIcon.textContent = '☀️';
           themeLabel.textContent = 'Light';
           currentTheme = 'dark';
         } else {
           htmlElement.removeAttribute('data-theme');
-          themeIcon.textContent = '🌙';
           themeLabel.textContent = 'Dark';
           currentTheme = 'light';
         }
