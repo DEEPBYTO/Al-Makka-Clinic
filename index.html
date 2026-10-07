@@ -8,7 +8,7 @@
   <meta name="keywords" content="Al-Makkah Clinic, Tibba Sultan Pur, Dr Ahmad Abdullah, clinic, medical care">
   <meta name="author" content="Al-Makkah Clinic">
 
-  <!-- Open Graph / Facebook / WhatsApp -->
+  <!-- Open Graph / Facebook / WhatsApp / LinkedIn -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://deepbyto.github.io/Al-Makka-Clinic/">
   <meta property="og:title" content="Al-Makkah Clinic">
@@ -162,11 +162,11 @@
       background: var(--primary-dark);
     }
 
-    /* ---------- HERO (with preview image) ---------- */
+    /* ---------- HERO ---------- */
     .hero {
       background: var(--hero-bg);
       color: var(--hero-text);
-      padding: 80px 0 70px;
+      padding: 100px 0 90px;
       position: relative;
       overflow: hidden;
     }
@@ -284,25 +284,6 @@
       color: var(--primary);
       background: rgba(59, 184, 163, 0.05);
       transform: translateY(-2px);
-    }
-
-    /* hero preview image */
-    .hero-preview {
-      margin-top: 55px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-preview img {
-      width: 100%;
-      max-width: 900px;
-      margin: 0 auto;
-      border-radius: 20px;
-      border: 1px solid var(--hero-border);
-      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
-      object-fit: cover;
-      aspect-ratio: 16 / 9;
-      background: var(--secondary);
     }
 
     /* hero stats row */
@@ -673,11 +654,7 @@
       }
 
       .hero {
-        padding: 60px 0 50px;
-      }
-
-      .hero-preview {
-        margin-top: 40px;
+        padding: 70px 0 60px;
       }
 
       .hero-stats {
@@ -790,7 +767,7 @@
 
   <main>
 
-    <!-- Hero with preview image -->
+    <!-- Hero (no preview image on page) -->
     <section class="hero">
       <div class="container">
         <div class="hero-content">
@@ -817,32 +794,22 @@
             </a>
           </div>
 
-        </div>
-
-        <!-- preview image -->
-        <div class="hero-preview">
-          <img
-            src="https://raw.githubusercontent.com/DEEPBYTO/Al-Makka-Clinic/main/preview.png"
-            alt="Al-Makkah Clinic Preview"
-            onerror="this.style.display='none'"
-          >
-        </div>
-
-        <div class="hero-stats">
-          <div class="hero-stat">
-            <strong>12+</strong>
-            <span>Services</span>
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <strong>12+</strong>
+              <span>Services</span>
+            </div>
+            <div class="hero-stat">
+              <strong>9AM – 9PM</strong>
+              <span>Open Hours</span>
+            </div>
+            <div class="hero-stat">
+              <strong>PKR 300</strong>
+              <span>Consultation</span>
+            </div>
           </div>
-          <div class="hero-stat">
-            <strong>9AM – 9PM</strong>
-            <span>Open Hours</span>
-          </div>
-          <div class="hero-stat">
-            <strong>PKR 300</strong>
-            <span>Consultation</span>
-          </div>
-        </div>
 
+        </div>
       </div>
     </section>
 
